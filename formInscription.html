@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<body>
+<h1> Onglet Inscription</h1>
+<form action =inscription.php method ='POST'>
+    <table>
+        <tr>
+            <td> <label for name ="nom"> Nom </label></td>
+            <td><input type ="text" name="nom" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="prenom"> Prenom </label></td>
+            <td><input type ="text" name="prenom" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="mail"> Adresse mail </label></td>
+            <td><input type ="email" name="mail" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="telFixe"> Téléphone fixe</label></td>
+            <td><input type ="text" name="telFixe" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="telPortable"> Téléphone portable</label></td>
+            <td> <input type ="text" name="telPortable" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="rue"> Rue </label></td>
+            <td><input type ="text" name="rue" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="cp"> Code postal </label></td>
+            <td><input type ="text" name="cp" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="ville"> Ville </label></td>
+            <td><input type ="text" name="ville" required></td>
+        </tr>
+        <tr>
+            <td> <label for  name="mdp"> Mot de passe </label></td>
+            <td><input type ="password" name="mdp" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="confirmerMdp"> Confirmer le mot de passe </label></td>
+            <td><input type ="password" name="confirmerMdp" required></td>
+        </tr>
+        <tr>
+            <td> <input type="submit" value ="S'inscrire"/> </td>
+            <td><input type="reset" value ="Effacer"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
