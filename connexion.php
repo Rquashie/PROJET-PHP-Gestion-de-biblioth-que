@@ -12,11 +12,9 @@ $sql -> execute(array('login' => $login, 'mdp' => $mdp));
 $data = $sql -> fetch();
 if ($data) {
    session_start();
-   $_SESSION['login'] = $login;
-   header('Location: pageUtilisateur.html');
-    echo "<h1> Bienvenue ".$_SESSION['login']."</h1>"; ;
-
-    
+   $_SESSION['login'] = $login ;
+   $_SESSION['mdp'] = $mdp;
+   header('Location: pageUtilisateur.php');
 }
 else {
     echo "<h3> Veuillez saisir un mot de passe et un identifiant valide </h3>";
