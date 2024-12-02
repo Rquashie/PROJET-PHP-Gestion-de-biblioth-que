@@ -11,8 +11,12 @@ $sql = $bdd->prepare("SELECT * from inscrit where email = :login and mot_de_pass
 $sql -> execute(array('login' => $login, 'mdp' => $mdp));
 $data = $sql -> fetch();
 if ($data) {
-   echo "<h1> Bienvenue </h1>" ;
+   session_start();
+   $_SESSION['login'] = $login;
+   header('Location: pageUtilisateur.html');
+    echo "<h1> Bienvenue ".$_SESSION['login']."</h1>"; ;
 
+    
 }
 else {
     echo "<h3> Veuillez saisir un mot de passe et un identifiant valide </h3>";
