@@ -11,14 +11,14 @@ if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
     echo "<hr>";
     echo "<div class='enTete'>" ;
     echo"<div class ='enTeteUn'>" ;
-    echo "<li><a href='modifier.html'> Modifier les informations d'un inscrit </a></li>";
+    echo "<li> <a href=modifier.html> Modifier les informations d'un inscrit </a></li>";
     echo "</div>";
     echo"<div class ='enTeteDeux'>" ;
-    echo "<li> <a>Ajouter un nouvel emprunt</a></li>";
+    echo "<li> <a href=''>Supprimer des informations</a></li>";
     echo "</div>";
     echo "</div>" ;
     echo "<hr>";
-    echo "<h3> Liste des livres empruntés</h3>" ;
+    echo "<h3> Liste des profils empruntés</h3>" ;
     // Select * from livre
 
     echo "<a href=deconnecter.php>Se deconnecter</a>";
