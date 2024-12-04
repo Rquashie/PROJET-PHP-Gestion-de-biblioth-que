@@ -25,56 +25,64 @@ $_SESSION['nouveauMdp'] = $nouveauMdp;
 
 $sessionProfil = $_SESSION['chercheProfil'];
 $sessionNom = $_SESSION['nouveauNom'];
+$sessionPrenom = $_SESSION['nouveauPrenom'];
+$sessionMail = $_SESSION['nouveauMail'];
+$sessionTelFixe = $_SESSION['nouveauTelFixe'];
+$sessionTelPortable = $_SESSION['nouveauTelPortable'];
+$sessionRue = $_SESSION['nouveauRue'];
+$sessionCp = $_SESSION['nouveauCp'];
+$sessionVille = $_SESSION['nouveauVille'];
+$sessionMdp = $_SESSION['nouveauMdp'];
 
 
-$dsn = 'mysql:host=localhost;port=3307;dbname=rqe_librairie;charset=utf8';
+
+$dsn = 'mysql:host=localhost;port=3306;dbname=rqe_librairie;charset=utf8';
 $bdd = new pdo($dsn, 'root', '');
-if(isset($SESSION['chercheProfil'])) {
-    if (!isset($nouveauNom)) {
-        $sql = "UPDATE inscrit 
-            set nom = :nouveauNom where id_inscrit =:$membre";
+if(isset($sessionProfil)) {
+    if (!empty($sessionNom)) {
+        $sql = "UPDATE inscrit  set nom = :nouveauNom where id_inscrit =:$sessionProfil";
         $req = $bdd->prepare($sql);
         $req->execute(array('nouveauNom' => $sessionNom));
         echo "<h3> Modification du nom effectué </h3>";
-    } else if (isset($nouveauPrenom)) {
-        $sql = "UPDATE inscrit 
-            set prenom = :nouveauNom where id_inscrit =:$membre";
+    } else if (!empty($sessionPrenom)){
+        $sql = "UPDATE inscrit set prenom = :nouveauPrenom where id_inscrit =:$sessionProfil";
         $req = $bdd->prepare($sql);
-        $req->execute(array('nouveauPrenom' => $nouveauPrenom));
+        $req->execute(array('nouveauPrenom' => $sessionPrenom));
         echo "<h3> Modification du prenom effectué !</h3>";
-    } else if (isset($nouveauMail)) {
-        $sql = "UPDATE inscrit 
-    set email =:nouveauMail where id_inscrit =:$membre";
+    } else if (!empty($sessionMailail)) {
+        $sql = "UPDATE inscrit set email =:nouveauMail where id_inscrit =:$sessionProfil";
         $req = $bdd->prepare($sql);
-        $req->execute(array('nouveauMail' => $nouveauMail));
+        $req->execute(array('nouveauMail' => $sessionMail));
         echo "<H3>Modification du mail effectué !</H3>";
 
-    } else if (isset($nouveauTelFixe)) {
-        $sql = "UPDATE inscrit 
-     set tel_fixe =:nouveauTelFixe where id_inscrit =:$membre;";
+    } else if (!empty($sessionTelFixe)) {
+        $sql = "UPDATE inscrit set tel_fixe =:nouveauTelFixe where id_inscrit =:$sessionProfil";
         $req = $bdd->prepare($sql);
-        $req->execute(array('nouveauTelFixe' => $nouveauTelFixe));
+        $req->execute(array('nouveauTelFixe' => $sessionTelFixe));
         echo "<h3>Modification du telephone fixe effectué !</h3>";
-    } else if (isset($nouveauTelPortable)) {
-        $sql = "UPDATE inscrit 
-     set tel_portable = :nouveauTelPortable where id_inscrit =:$membre;";
+        
+    } else if (!empty($sessionTelPortable))  {
+        $data = (array(
+            'id_inscrit'=> $sessionProfil ,
+            'tel_portable' => $sessionTelPortable));
+        $sql = "UPDATE inscrit set tel_portable = :nouveauTelPortable where id_inscrit = :$sessionProfil;";
         $req = $bdd->prepare($sql);
-        $req->execute(array('nouveauTelPortable' => $nouveauTelPortable));
+        $req->execute($data);
         echo "<h3>Modification du telephone portable effectué </h3>";
-    } else if (isset($nouveauRue)) {
-        $sql = "UPDATE inscrit set rue = :nouveauRue where id_inscrit =:$membre";
+
+    } else if (!empty($sessionRue)) {
+        $sql = "UPDATE inscrit set rue = :nouveauRue where id_inscrit =:$sessionProfil";
         $req = $bdd->prepare($sql);
-        $req->execute(array('nouvelleRue' => $nouvelleRue));
+        $req->execute(array('nouvelleRue' => $sessionRue));
         echo "<h3> Modification de la rue effectuée </h3>";
-    } else if (isset($nouveauCp)) {
-        $sql = "UPDATE inscrit 
-    set cp = :nouveauCp where id_inscrit =:$membre";
+    } else if (isset($sessionCp)) {
+        $sql = "UPDATE inscrit set cp = :nouveauCp where id_inscrit =:$sessionProfil";
         $req = $bdd->prepare($sql);
-        $req->execute(array('nouveauCp' => $nouveauCp));
+        $req->execute(array('nouveauCp' => $sessionCp));
         echo "<h3> Modification du code postal effectué </h3>";
     }
-
-    echo "<a href ='formConnexion.html'>Retour vers la page de connexion</a> ";
 }
+echo "<a href ='formConnexion.html'>Retour vers la page de connexion</a> ";
+
 
 
