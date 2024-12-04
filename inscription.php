@@ -32,3 +32,4 @@ if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($telFixe) && !emp
 
 }
 
+

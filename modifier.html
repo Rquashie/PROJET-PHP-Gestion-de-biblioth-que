@@ -10,8 +10,16 @@
 </head>
 <body>
 <h1> Modifier des informations</h1>
+
+
+
 <form action ="modifier.php" method ='POST'>
+
     <table>
+        <tr>
+        <label for name ="chercheProfil">Rechercher un membre avec son ID</label>
+        <input type="search" name="chercheProfil" /> <button type = submit >Search</button>
+        </tr>
         <tr>
             <td> <label for name ="nouveauNom"> Nouveau Nom </label></td>
             <td><input type ="text" name="nouveauNom" ></td>
@@ -42,7 +50,7 @@
         </tr>
         <tr>
             <td> <label for name ="nouvelleVille"> Nouvelle Ville </label></td>
-            <td><input type ="text" name="nouvelleVille" required></td>
+            <td><input type ="text" name="nouvelleVille" </td>
         </tr>
         <tr>
             <td> <label for  name="nouveauMdp"> Nouveau Mot de passe </label></td>
@@ -50,11 +58,11 @@
         </tr>
         <tr>
             <td> <label for name ="nouveauConfirmerMdp"> Confirmer le mot de passe </label></td>
-            <td><input type ="password" name="confirmerMdp" required></td>
+            <td><input type ="password" name="confirmerMdp" ></td>
         </tr>
         <tr>
-            <td> <input type="submit" value ="S'inscrire"/> </td>
-            <td><input type="reset" value ="Effacer"/></td>
+            <td> <input type="submit" value ="Confirmer les modification"/> </td>
+            <td><input type="reset" value ="Annuler les modifications"/></td>
         </tr>
 
 
