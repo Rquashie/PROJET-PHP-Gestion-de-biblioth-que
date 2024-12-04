@@ -1,6 +1,6 @@
 
 <?php
-$dsn = 'mysql:host=localhost;dbname=rqe_librairie;charset=utf8';
+$dsn = 'mysql:host=localhost;port=3307;dbname=rqe_librairie;charset=utf8';
 $bdd = new pdo($dsn, 'root', '');
 
 $nom = $_POST['nom'];
@@ -14,15 +14,15 @@ $ville = $_POST['ville'];
 $mdp = $_POST['mdp'];
 
 if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($telFixe) && !empty($telPortable) && !empty($rue) && !empty($cp) && !empty($ville)){
-    $sql = "INSERT  into inscrit (id_inscrit , nom , prenom , email , tel_fixe,tel_portable ,rue ,  cp , ville,mot_de_passe) values(:id_inscrit , :nom,:prenom,:email,:tel_fixe,:tel_portable,:rue,:cp,:ville,:mdp)";
+    $sql = "INSERT  into inscrit ( nom , prenom , email , tel_fixe,tel_portable ,rue ,  cp , ville,mot_de_passe) values(:nom,:prenom,:email,:tel_fixe,:tel_portable,:rue,:cp,:ville,:mdp)";
     $req = $bdd->prepare($sql);
     $req -> execute(array(
-        'id_inscrit' => 'null',
         'nom' => $nom,
         'prenom' => $prenom,
         'email' => $email,
         'tel_fixe' => $telFixe,
         'tel_portable' => $telPortable,
+        'rue'=> $rue,
         'cp' => $cp,
         'ville' => $ville,
         'mdp' => $mdp
