@@ -2,69 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Modifier les informations</title>
+    <title>Modifications</title>
 </head>
 <body>
-<h1> Modifier des informations</h1>
-
-
-
-<form action ="modifier.php" method ='POST'>
-
+<h1> Modifier les informations</h1>
+<form action = "modifier.php" method ='POST'>
     <table>
         <tr>
-        <label for name ="chercheProfil">Rechercher un membre avec son ID</label>
-        <input type="search" name="chercheProfil" /> <button type = submit >Valider</button>
+            <td><label for name ="id_membre"> Identifiant du membre </label> </td>
+            <td><input type ="text" name="id_membre" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouveauNom"> Nouveau Nom </label></td>
-            <td><input type ="text" name="nouveauNom" ></td>
+            <td> <label for name ="nomBIS"> Nom </label></td>
+            <td><input type ="text" name="nomBIS" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouveauPrenom"> Nouveau Prenom </label></td>
-            <td><input type ="text" name="nouveauPrenom" ></td>
+            <td> <label for name ="prenomBIS"> Prenom </label></td>
+            <td><input type ="text" name="prenomBIS" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouveauMail"> Nouvelle Adresse mail </label></td>
-            <td><input type ="email" name="nouveauMail" ></td>
+            <td> <label for name ="mailBIS"> Adresse mail </label></td>
+            <td><input type ="email" name="mailBIS" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouveauTelFixe"> Nouveau Téléphone fixe</label></td>
-            <td><input type ="text" name="nouveauTelFixe" ></td>
+            <td> <label for name ="telFixeBIS"> Téléphone fixe</label></td>
+            <td><input type ="text" name="telFixeBIS" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouveauTelPortable"> Téléphone portable</label></td>
-            <td> <input type ="text" name="nouveauTelPortable" ></td>
+            <td> <label for name ="telPortableBIS"> Téléphone portable</label></td>
+            <td> <input type ="text" name="telPortableBIS" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouvelleRue"> Nouvelle Rue </label></td>
-            <td><input type ="text" name="nouvelleRue" ></td>
+            <td> <label for name ="rueBIS"> Rue </label></td>
+            <td><input type ="text" name="rueBIS" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouveauCp">Nouveau Code postal </label></td>
-            <td><input type ="text" name="nouveauCp" ></td>
+            <td> <label for name ="cpBIS"> Code postal </label></td>
+            <td><input type ="text" name="cpBIS" ></td>
         </tr>
         <tr>
-            <td> <label for name ="nouvelleVille"> Nouvelle Ville </label></td>
-            <td><input type ="text" name="nouvelleVille" ></td>
-        </tr>
-        <tr>
-            <td> <label for  name="nouveauMdp"> Nouveau Mot de passe </label></td>
-            <td><input type ="password" name="nouveauMdp" ></td>
-        </tr>
-        <tr>
-            <td> <label for name ="nouveauConfirmerMdp"> Confirmer le mot de passe </label></td>
-            <td><input type ="password" name="confirmerMdp" ></td>
-        </tr>
-        <tr>
-            <td> <input type="submit" value ="Confirmer les modification"/> </td>
-            <td><input type="reset" value ="Annuler les modifications"/></td>
-        </tr>
-        <tr>
-            <td> <a href="pageUtilisateur.php">Retour </a> </td>
+            <td> <label for name ="villeBIS"> Ville </label></td>
+            <td><input type ="text" name="villeBIS" ></td>
         </tr>
 
 
+        <tr>
+            <td> <input type="submit" value ="Confirmer les changements"/> </td>
+            <td><input type="reset" value ="Annuler les changements"/></td>
+        </tr>
+        <tr>
+            <td> <a href="pageUtilisateur.php">Retour  </a></td>
+        </tr>
 
     </table>
 </form>

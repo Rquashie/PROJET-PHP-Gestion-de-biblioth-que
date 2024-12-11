@@ -18,7 +18,7 @@ if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
     echo "</div>";
     echo "</div>" ;
     echo "<hr>";
-    echo "<h3> Liste des profils empruntés</h3>" ;
+    echo "<h3> Liste des inscrits</h3>" ;
     // Select * from livre
 
     echo "<a href=deconnecter.php>Se deconnecter</a>";

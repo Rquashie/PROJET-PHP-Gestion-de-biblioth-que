@@ -1,7 +1,7 @@
 
 <?php
-var_dump($_POST);
-$dsn = 'mysql:host=localhost;port=3306;dbname=rqe_librairie;charset=utf8';
+
+$dsn = 'mysql:host=localhost;port=3307;dbname=rqe_librairie;charset=utf8';
 $bdd = new pdo($dsn, 'root', '');
 
 $login = $_POST['login'];
