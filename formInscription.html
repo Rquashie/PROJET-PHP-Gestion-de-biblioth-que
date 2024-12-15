@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td> <label for name ="telFixe"> Téléphone fixe</label></td>
-            <td><input type ="text" name="telFixe" required></td>
+            <td><input type ="text" name="telFixe" ></td>
         </tr>
         <tr>
             <td> <label for name ="telPortable"> Téléphone portable</label></td>
@@ -30,11 +30,11 @@
         </tr>
         <tr>
             <td> <label for name ="rue"> Rue </label></td>
-            <td><input type ="text" name="rue" required></td>
+            <td><input type ="text" name="rue" ></td>
         </tr>
         <tr>
             <td> <label for name ="cp"> Code postal </label></td>
-            <td><input type ="text" name="cp" required></td>
+            <td><input type ="text" name="cp" ></td>
         </tr>
         <tr>
             <td> <label for name ="ville"> Ville </label></td>
@@ -48,6 +48,15 @@
             <td> <label for name ="confirmerMdp"> Confirmer le mot de passe </label></td>
             <td><input type ="password" name="confirmerMdp" required></td>
         </tr>
+        <tr>
+            <td><label for ="user">Utilisateur</label></td>
+            <td><input type="radio" id="user" name="fonction" value="user"></td>
+        </tr>
+        <tr>
+            <td><label for ="admin">Administrateur</label></td>
+            <td><input type="radio" id="admin" name="fonction" value="admin"></td>
+        </tr>
+
         <tr>
             <td> <input type="submit" value ="S'inscrire"/> </td>
             <td><input type="reset" value ="Effacer"/></td>

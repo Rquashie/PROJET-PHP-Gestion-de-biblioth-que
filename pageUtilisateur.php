@@ -5,7 +5,7 @@ echo "<html>" ;
 echo "<head>" ;
 echo "</head>" ;
 echo "<body>" ;
-echo "<h1> Page membres</h1>" ;
+echo "<h1> Page Administrateur</h1>" ;
 if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
     echo "<h3> Bienvenue " . $_SESSION['login'] . "</h3>";
     echo "<hr>";
@@ -18,11 +18,10 @@ if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
     echo "</div>";
     echo "</div>" ;
     echo "<hr>";
-    echo "<h3> Liste des inscrits</h3>" ;
-    // Select * from livre
 
-    echo "<a href=deconnecter.php>Se deconnecter</a>";
-    session_destroy() ;
+
+    echo "<a href=index.html>Se deconnecter</a>";
+
 
     }
     echo "</body>" ;
