@@ -3,38 +3,46 @@ var_dump($_POST);
 session_start() ;
 
 
-$dsn = 'mysql:host=localhost;port=3307;dbname=rqe_librairie;charset=utf8';
-$bdd = new pdo($dsn, 'root', '');
+$dsn = 'mysql:host=localhost;port=3306;dbname=rqe_librairie;charset=utf8';
+$bdd = new PDO($dsn, 'root', '');
 
 
-$membre = $_POST['id_membre'];
-$nom = $_POST['nom'];
-$prenom = $_POST['prenomBIS'];
-$email = $_POST['mailBIS'];
-$telFixe = $_POST['telFixeBIS'];
-$telPortable = $_POST['telPortableBIS'];
-$rue = $_POST['rueBIS'];
-$cp = $_POST['cpBIS'];
-$ville = $_POST['villeBIS'];
 
-$champs  = [$membre , $prenom , $email , $telFixe, $telPortable , $rue , $cp , $ville];
+$membre = $_POST['id_membre'] ;
+$id [] = $membre ;
 
-        // Affiche les valeurs de l'id_inscrit
+$sqlSelect =$bdd -> prepare( "SELECT * from inscrit where id_inscrit = ?");
+$sqlSelect -> execute($id);
+$ligne = $sqlSelect -> fetch();
 
-    $sqlInscrit = "SELECT * from inscrit where id_inscrit= :$membre";
+$nom = empty($_POST['nomBIS']) ? $nom = $ligne['nom']  : $_POST['nomBIS'] ;
 
-      // Les champs remplis
-     foreach($champs as $champ){
-      if(isset($champ )){
-         $sql = "UPDATE 
-      }
 
+$prenom = empty($_POST['prenomBIS']) ? $prenom = $ligne['prenom']  : $_POST['prenomBIS'] ;
+
+$email = empty($_POST['emailBIS']) ? $email = $ligne['email'] : $_POST['emailBIS'] ;
+
+$tel_fixe = empty($_POST['telFixeBIS']) ? $tel_fixe = $ligne['tel_fixe'] : $_POST['telFixeBIS'] ;
+
+$tel_portable = empty($_POST['telPortableBIS']) ? $tel_portable = $ligne['tel_portable'] : $_POST['telPortableBIS'] ;
+
+$rue = empty($_POST['rueBIS']) ? $rue = $ligne['rue'] : $_POST['rueBIS'] ;
+
+$cp = empty($_POST['cpBIS']) ? $cp = $ligne['cp'] : $_POST['cpBIS'] ;
+
+$ville  = empty($_POST['villeBIS']) ? $ville = $ligne['ville'] : $_POST['villeBIS'] ;
+
+
+
+$colonne = [ $nom , $prenom , $email , $tel_fixe , $tel_portable , $rue , $cp , $ville,$membre ,];
+if(!empty($membre)){
+    $sql = $bdd -> prepare("UPDATE inscrit SET nom = ? , prenom = ? , email = ? , tel_fixe = ? , tel_portable = ? ,
+                   rue = ? , cp = ? , ville = ?  WHERE id_inscrit = ?");
+    $sql -> execute($colonne);
 
 }
 
+echo "<a href ='modifier.html'>Retour vers la page de modification</a> ";
 
-
-echo "<a href ='pageUtilisateur.php'>Retour vers la page d'Utilisateur'</a> ";
-
-
+?>
 
