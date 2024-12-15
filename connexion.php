@@ -1,11 +1,14 @@
 
 <?php
 
-$dsn = 'mysql:host=localhost;port=3307;dbname=rqe_librairie;charset=utf8';
+$dsn = 'mysql:host=localhost;port=3306;dbname=rqe_librairie;charset=utf8';
 $bdd = new pdo($dsn, 'root', '');
-
-$login = $_POST['login'];
-$mdp = $_POST['mdp'];
+$login = "";
+$mdp = "";
+if(isset($_POST['login']) && isset($_POST['mdp'])) {
+    $login = $_POST['login'];
+    $mdp = $_POST['mdp'];
+}
 
 $sql = $bdd->prepare("SELECT * from inscrit where email = :login and mot_de_passe = :mdp ");
 $sql -> execute(array('login' => $login, 'mdp' => $mdp));
