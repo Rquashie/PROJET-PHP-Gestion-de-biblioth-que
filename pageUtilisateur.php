@@ -14,7 +14,7 @@ if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
     echo "<li> <a href=modifier.html> Modifier les informations d'un inscrit </a></li>";
     echo "</div>";
     echo"<div class ='enTeteDeux'>" ;
-    echo "<li> <a href=''>Supprimer des informations</a></li>";
+    echo "<li> <a href='suppression.php'>Supprimer des informations</a></li>";
     echo "</div>";
     echo "</div>" ;
     echo "<hr>";
@@ -22,6 +22,7 @@ if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
     // Select * from livre
 
     echo "<a href=deconnecter.php>Se deconnecter</a>";
+    session_destroy() ;
 
     }
     echo "</body>" ;
