@@ -42,7 +42,6 @@ if(!empty($membre)){
 
 }
 
-echo "<a href ='modifier.html'>Retour vers la page de modification</a> ";
 
 ?>
 

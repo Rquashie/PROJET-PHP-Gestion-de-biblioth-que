@@ -31,7 +31,7 @@ if(!empty($nom) && !empty($prenom) && !empty($email)  && !empty($telPortable)  &
     )) ;
 
     echo "<p> La personne a bien été inscrite </p>" ;
-    header('location : formConnexion.html');
+    header('location :index.html');
 }
 else {
     echo "<p> Erreur d'enregistrement </p>" ;

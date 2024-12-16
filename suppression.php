@@ -80,6 +80,6 @@ echo "</style>";
 
 
 
-echo "<a href = 'pageUtilisateur.php'>Retour</a>";
+echo "<a href = 'pageAdmin.php'>Retour</a>";
 
 ?>

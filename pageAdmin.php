@@ -11,7 +11,7 @@ if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
     echo "<hr>";
     echo "<div class='enTete'>" ;
     echo"<div class ='enTeteUn'>" ;
-    echo "<li> <a href=modifier.html> Modifier les informations d'un inscrit </a></li>";
+    echo "<li> <a href=modifier.html> Modifier les informations d'un utilisateur </a></li>";
     echo "</div>";
     echo"<div class ='enTeteDeux'>" ;
     echo "<li> <a href='suppression.php'>Supprimer des informations</a></li>";
