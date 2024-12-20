@@ -46,6 +46,7 @@ echo "<form action = 'suppression.php' method='POST'> ";
     echo "<th>Code postal</th>";
     echo "<th>Ville</th>";
     echo "<th>Fonction</th>";
+
     echo "<th>Opérations</th></tr>";
 
     // Chaque ligne contient les informations d'un livre
@@ -65,7 +66,7 @@ echo "<form action = 'suppression.php' method='POST'> ";
     $boutonSupprimer ="" ;
     if(isset($_POST['boutonSupprimer'])) {
         $boutonSupprimer = $_POST['boutonSupprimer'];
-        $sqlDelete = $bdd->prepare("DELETE FROM inscrit WHERE id_inscrit = $id_inscrit");
+        $sqlDelete = $bdd->prepare("DELETE * FROM inscrit WHERE id_inscrit = $id_inscrit");
         $sqlDelete->execute();
     }
     echo "</tr>";

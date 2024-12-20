@@ -6,7 +6,7 @@ echo "<head>" ;
 echo "</head>" ;
 echo "<body>" ;
 echo "<h1> Page Administrateur</h1>" ;
-if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
+if(isset($_SESSION["login"])) {
     echo "<h3> Bienvenue " . $_SESSION['login'] . "</h3>";
     echo "<hr>";
     echo "<div class='enTete'>" ;
