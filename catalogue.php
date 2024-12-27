@@ -1,7 +1,7 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;port=3306;dbname=rqe_librairie', 'root', '');
-if(isset($_SESSION["login"])&& $_SESSION["mdp"]) {
+if(isset($_SESSION["login"])){
     echo "<p> Cataloge des livres disponibles</p>" ;
     $sql = $bdd -> prepare("SELECT * FROM livre");
     $sql -> execute();

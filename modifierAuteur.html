@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Modifier un Auteur</title>
+    <title>Modifications</title>
 </head>
 <body>
-<h2> Modifier un auteur</h2>
+<h1> Modifier les informations d'un auteur</h1>
+<form action = "modifierAuteur.php" method ='POST'>
+    <table>
+        <tr>
+            <td><label for name ="id_auteur"> Identifiant de l'auteur </label> </td>
+            <td><input type ="text" name="id_auteur" required></td>
+        </tr>
+        <tr>
+            <td> <label for name ="nomAuteurBIS"> Nom </label></td>
+            <td><input type ="text" name="nomAuteurBIS" ></td>
+        </tr>
+        <tr>
+            <td> <label for name ="prenomAuteurBIS"> Prenom </label></td>
+            <td><input type ="text" name="prenomAuteurBIS" ></td>
+        </tr>
+        <tr>
+            <td> <label for name ="date_naissanceAuteur"> Date de naissance </label></td>
+            <td><input type ="date" name="date_naissanceAuteur" ></td>
+        </tr>
+
+        <tr>
+            <td> <input type="submit" value ="Confirmer les changements"/> </td>
+            <td><input type="reset" value ="Annuler les changements"/></td>
+        </tr>
+        <tr>
+            <td> <a href="pageAdmin.php">Retour  </a></td>
+        </tr>
+
+    </table>
+</form>
 </body>
 </html>

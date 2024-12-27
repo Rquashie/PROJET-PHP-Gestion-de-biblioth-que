@@ -1,46 +1,61 @@
 
 <?php
-session_start();
-echo "<html>" ;
-echo "<head>" ;
-echo "</head>" ;
-echo "<body>" ;
-echo "<h1> Page Administrateur</h1>" ;
-if(isset($_SESSION["login"])) {
-    echo "<h3> Bienvenue " . $_SESSION['login'] . "</h3>";
-    echo "<hr>";
-    echo "<div class='enTete'>" ;
-    echo"<div class ='enTeteUn'>" ;
-    echo "<li> <a href=modifier.html> Modifier les informations d'un utilisateur </a></li>";
-    echo "</div>";
-    echo"<div class ='enTeteDeux'>" ;
-    echo "<li> <a href='suppression.php'>Supprimer des informations</a></li>";
-    echo "</div>";
-    echo "</div>" ;
-    echo "<hr>";
+    session_start();
+if(isset($_SESSION['login'])) {
+    echo "<html>";
+    echo "<head>";
+    echo "</head>";
+    echo "<body>";
+    echo "<h1> Page Administrateur</h1>";
+    if (isset($_SESSION["login"])) {
+        echo "<h3> Bienvenue " . $_SESSION['login'] . "</h3>";
+
+        echo "<div class= 'gestion-inscrit'>";
+        echo "<h3> Gestion des inscrits</h3>";
+        echo "<p> Dans cet onglet vous pouvez ajouter , modifier ou supprimer un inscrit </p>";
+        echo "<ul>";
+        echo "<li> <a href='formInscription.html'> Ajouter un utilisateur</a></li>";
+        echo "<li><a href = 'modifier.html'> Modifier un utilisateur</a></li>";
+        echo "<li><a href='suppression.php'>Supprimer un utilisateur</li>";
+        echo "</ul>";
+        echo "</div>";
+
+        echo "<div class= 'gestion-auteur'>";
+        echo "<h3> Gestion des auteurs</h3>";
+        echo "<p> Dans cet onglet vous pouvez afficher , ajouter , modifier ou supprimer un auteur </p>";
+        echo "<ul>";
+        echo "<li> <a href='formAuteur.html'> Ajouter un auteur</a></li>";
+        echo "<li><a href = 'modifierAuteur.html'> Modifier un auteur</a></li>";
+        echo "<li><a href='supprimerAuteur.php'>Supprimer un auteur</li>";
+        echo "<li> <a href='listeAuteur.php'>Liste des auteurs</a>";
+        echo "</ul>";
+        echo "</div>";
 
 
-    echo "<a href=index.html>Se deconnecter</a>";
+        echo "<div class = 'pied-page' >";
+        echo "<a href=index.html>Se deconnecter</a> ";
+        echo "</div>";
 
 
     }
-    echo "</body>" ;
-    echo "</html>" ;
-
+    echo "</body>";
+    echo "</html>";
+}
 ?>
 <style type ="text/css">
-    .enTete{
-        display : flex ;
-        padding : 50px;
-        margin-left: 100px;
+    .gestion-inscrit {
+        border : 1px solid ;
+        width : 25% ;
     }
-    .enTeteDeux {
-        margin-left: 100px;
+    .gestion-auteur {
+        margin-top : 50px ;
+        border : 1px solid ;
+        width : 25% ;
     }
-    html{
-        width : 80%
-        margin : auto;
 
+
+    .pied-page{
+        margin-top : 100px;
     }
 
 

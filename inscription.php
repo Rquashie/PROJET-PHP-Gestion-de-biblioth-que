@@ -33,10 +33,12 @@ if(!empty($nom) && !empty($prenom) && !empty($email)  && !empty($telPortable)  &
     )) ;
 
     echo "<p> Vos informations ont bien été enregistrées </p>" ;
-    header('location :index.html');
+    header('location : index.html');
 }
 else {
     echo "<p> Erreur d'enregistrement </p>" ;
 }
+
+?>
 
 

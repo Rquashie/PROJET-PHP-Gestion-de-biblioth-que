@@ -34,6 +34,7 @@ if(isset($_SESSION['login'])) {
         $data = $sqlNationalite->fetchAll();
         $nationalite = $data[0]["nom"];
 
+        //
         echo "<form action = 'supprimerAuteur.php' method='POST'> ";
         echo "<table border='1'>";
 
@@ -43,8 +44,8 @@ if(isset($_SESSION['login'])) {
         echo "<th>prenom</th>";
         echo "<th>Date de naissance</th>";
         echo "<th>Nationalité</th>";
-
-        echo "<th>Opérations</th></tr>";
+        echo "<th>Opérations</th>";
+        echo "</tr>";
 
 
         // Chaque ligne contient les informations d'un livre
@@ -54,24 +55,31 @@ if(isset($_SESSION['login'])) {
         echo "<td>$prenom</td>";
         echo "<td>$date_naissance</td>";
         echo "<td>$nationalite</td>";
-
-
-        echo "<td> <button type='submit' name='boutonSupprimer' value='" . ($ligne['id_auteur']) . "'>Supprimer</button></td>";
-
-     
+        echo "<input type='hidden' name='id_auteur' value='$id_auteur'>";
+        echo "<td> <button type='submit' name='boutonSupprimer' value='Supprimer'>Supprimer</button></td>";
 
         echo "</tr>";
-    }
-        echo "<br>";
+        echo "</table>";
+        echo "</form>";
 
-    echo "</table>";
-    echo "</form>";
+    }
+
+    if (isset($_POST['boutonSupprimer']) && isset($id_auteur)) {
+        $id_auteur = $_POST['id_auteur'];
+        $sqlDelete = $bdd->prepare("DELETE FROM auteur WHERE id_auteur = $id_auteur ");
+        $sqlDelete->execute();
+
+        //Rester sur la page
+        header("location:supprimerAuteur.php");
+        exit;
+    }
+
+
+    echo "<a href = 'pageAdmin.php'>Retour</a>";
+
     echo "<style>";
     echo "table {border-collapse: collapse; width: 80%;table-layout : fixed ;}";
     echo "th, td {border: 1px solid black; padding: 8px; text-align: left;}";
     echo "</style>";
-
-
-    echo "<a href = 'pageAdmin.php'>Retour</a>";
 }
 ?>

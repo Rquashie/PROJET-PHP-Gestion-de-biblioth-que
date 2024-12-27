@@ -37,7 +37,12 @@ $bdd = new PDO('mysql:host=localhost;port=3306;dbname=rqe_librairie', 'root', ''
         ));
 
         echo "<p> Les informations de l'auteur ont bien été enregistrées </p>";
-        header('location : pageAdmin.php');
+
+        if (isset($_POST['Submit'])) {
+            //Rester sur la page
+            header("location:formAuteur.html");
+
+        }
     } else {
         echo "<p> Erreur d'enregistrement </p>";
     }

@@ -61,12 +61,13 @@ echo "<form action = 'suppression.php' method='POST'> ";
     echo "<td>$cp</td>";
     echo "<td>$ville</td>";
     echo "<td>$fonction</td>";
-
-    echo"<td> <button name='boutonSupprimer'> Supprimer </button></td>";
+    echo "<input type='hidden' name='id_inscrit' value='$id_inscrit'>";
+    echo"<td> <button type ='submit' name='boutonSupprimer'> Supprimer </button></td>";
     $boutonSupprimer ="" ;
-    if(isset($_POST['boutonSupprimer'])) {
+    if(isset($_POST['boutonSupprimer']) && $_POST['id_inscrit']) {
+        $id_inscrit = $_POST['id_inscrit'];
         $boutonSupprimer = $_POST['boutonSupprimer'];
-        $sqlDelete = $bdd->prepare("DELETE * FROM inscrit WHERE id_inscrit = $id_inscrit");
+        $sqlDelete = $bdd->prepare("DELETE FROM inscrit WHERE id_inscrit = $id_inscrit");
         $sqlDelete->execute();
     }
     echo "</tr>";
