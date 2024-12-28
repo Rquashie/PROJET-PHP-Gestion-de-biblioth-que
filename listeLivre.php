@@ -1,48 +1,45 @@
 <?php
 
 session_start();
- class Auteurs{
-        public function triAuteurs($colonne, $ordre)
-        {
-            global $bdd;
-            $sql = $bdd->prepare("SELECT * FROM auteur order by $colonne $ordre");
-            $sql->execute();
-            while ($ligne = $sql->fetch()) {
-                $ref_pays = $ligne['ref_pays'];
-                $var = [$ref_pays];
+class Livres{
+    public function triLivres($colonne, $ordre)
+    {
+        global $bdd;
+        $sql = $bdd->prepare("SELECT * FROM livre order by $colonne $ordre");
+        $sql->execute();
+        while ($ligne = $sql->fetch()) {
 
-                $id_auteur = $ligne['id_auteur'];
-                $nom = $ligne["nom"];
-                $prenom = $ligne["prenom"];
-                $date_naissance = $ligne['date_naissance'];
-                $sqlNationalite = $bdd->prepare("SELECT p.nom FROM pays p inner join auteur a 
+            $id_livre = $ligne['id_livre'];
+            $nom = $ligne["titre"];
+            $annee = $ligne["annee"];
+            $sqlLivreAuteur = $bdd->prepare("SELECT p.nom FROM pays p inner join auteur a 
                                        on p.id_pays = a.ref_pays where a.ref_pays = ?");
-                $sqlNationalite->execute($var);
-                $data = $sqlNationalite->fetchAll();
-                $nationalite = $data[0]["nom"];
+            $sqlNationalite->execute($var);
+            $data = $sqlNationalite->fetchAll();
+            $nationalite = $data[0]["nom"];
 
-                // Chaque ligne contient les informations d'un livre
-                echo "<tr>";
-                echo "<td>$nom</td>";
-                echo "<td>$prenom</td>";
-                echo "<td>$date_naissance</td>";
-                echo "<td>$nationalite</td>";
-                echo "</tr>";
-            }
+            // Chaque ligne contient les informations d'un livre
+            echo "<tr>";
+            echo "<td>$nom</td>";
+            echo "<td>$prenom</td>";
+            echo "<td>$date_naissance</td>";
+            echo "<td>$nationalite</td>";
+            echo "</tr>";
         }
+    }
 }
-$auteur = new Auteurs() ;
+$livre = new Livres() ;
 
 if(isset($_SESSION["login"])) {
     $bdd = new PDO('mysql:host=localhost;port=3306;dbname=rqe_librairie', 'root', '');
-    echo "<h2>Liste des auteurs</h2>";
+    echo "<h2>Liste des livres</h2>";
     $recherche = "";
 
     echo "<div class ='contenu'>";
 
     echo "<div class='recherche'>";
-    echo "<form method='POST' action='listeAuteur.php'>";
-    echo "<input type='search' name='recherche' placeholder='Recherche un auteur...' />";
+    echo "<form method='POST' action='listeLivre.php'>";
+    echo "<input type='search' name='recherche' placeholder='Recherche un livre...' />";
     echo "<input type='submit' value='Valider' />";
     echo "<input type='reset' value='Annuler' />";
     echo "</form>";
@@ -108,25 +105,25 @@ if(isset($_SESSION["login"])) {
         if ($filtreAuteur == "date-desc") {
             $auteur->triAuteurs('date_naissance', 'DESC');
         }
-        }
+    }
     else {
         $auteur -> triAuteurs('id_auteur', 'ASC');
-        }
-
-        echo "</table>";
-        echo "</form>";
-    } else {
-
     }
+
     echo "</table>";
     echo "</form>";
+} else {
+
+}
+echo "</table>";
+echo "</form>";
 
 
-    echo "<br>";
-    echo "<br>";
+echo "<br>";
+echo "<br>";
 
-    echo "<a href = 'pageAdmin.php'>Retour au menu principal</a>";
-    echo "</div>";
+echo "<a href = 'pageAdmin.php'>Retour au menu principal</a>";
+echo "</div>";
 
 
 echo "<style>";

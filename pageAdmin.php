@@ -10,6 +10,7 @@ if(isset($_SESSION['login'])) {
     if (isset($_SESSION["login"])) {
         echo "<h3> Bienvenue " . $_SESSION['login'] . "</h3>";
 
+
         echo "<div class= 'gestion-inscrit'>";
         echo "<h3> Gestion des inscrits</h3>";
         echo "<p> Dans cet onglet vous pouvez ajouter , modifier ou supprimer un inscrit </p>";
@@ -31,6 +32,17 @@ if(isset($_SESSION['login'])) {
         echo "</ul>";
         echo "</div>";
 
+        echo "<div class= 'gestion-livre'>";
+        echo "<h3> Gestion des livres</h3>";
+        echo "<p> Dans cet onglet vous pouvez afficher , ajouter , modifier ou supprimer des livres</p>";
+        echo "<ul>";
+        echo "<li> <a href='formAjouterLivre.html'> Ajouter un livre</a></li>";
+        echo "<li><a href = 'modifierLivre.html'> Modifier un livre</a></li>";
+        echo "<li><a href='supprimerLivre.php'>Supprimer un livre</li>";
+        echo "<li> <a href='listeLivre.php'>Liste des livres</a>";
+        echo "</ul>";
+        echo "</div>";
+
 
         echo "<div class = 'pied-page' >";
         echo "<a href=index.html>Se deconnecter</a> ";
@@ -48,6 +60,11 @@ if(isset($_SESSION['login'])) {
         width : 25% ;
     }
     .gestion-auteur {
+        margin-top : 50px ;
+        border : 1px solid ;
+        width : 25% ;
+    }
+    .gestion-livre {
         margin-top : 50px ;
         border : 1px solid ;
         width : 25% ;

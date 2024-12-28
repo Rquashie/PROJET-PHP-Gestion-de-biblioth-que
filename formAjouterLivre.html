@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un livre</title>
+</head>
+<body>
+<h2> Formulaire d'ajout de livre</h2>
+<form  action="ajouterLivre.php" method="POST">
+    <table>
+        <tr>
+            <td><label for name = "titre">Titre </label></td>
+            <td> <input type ="text" name ="titre"></td>
+        </tr>
+        <tr>
+            <td><label for name ="annee">Année</label></td>
+            <td> <input type ="text" name ="annee"></td>
+        </tr>
+        <tr>
+            <td> <label for name="resume">Résumé</label></td>
+            <td> <textarea name = "resume" rows="5"> </textarea>
+        </tr>
+
+        <tr>
+            <td> <input type = "submit" value = "Valider"></td>
+            <td> <input type = "reset" value = "Annuler"></td>
+        </tr>
+    </table>
+</form>
+
+
+<div class="bas-page">
+    <a href = "pageAdmin.php">Retour</a>
+</div>
+
+</body>
+</html>
+
+<style type ="text/css">
+    body{
+        height : 70%
+    }
+    form{
+        border : 1px solid ;
+        width : 30% ;
+        margin  : 0 auto ;
+        padding: 20px;
+    }
+    .bas-page{
+        margin-top : 20%
+    }
+
+</style>
