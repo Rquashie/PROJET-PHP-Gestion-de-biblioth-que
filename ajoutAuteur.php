@@ -36,7 +36,6 @@ $bdd = new PDO('mysql:host=localhost;port=3306;dbname=rqe_librairie', 'root', ''
             'ref_pays' => $ref_pays
         ));
 
-        echo "<p> Les informations de l'auteur ont bien été enregistrées </p>";
 
         if (isset($_POST['Submit'])) {
             //Rester sur la page
