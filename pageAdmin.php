@@ -24,7 +24,7 @@ if(isset($_SESSION['login'])) {
         echo "<ul>";
         echo "<li> <a href='formInscription.html'> Ajouter un utilisateur</a></li>";
         echo "<li><a href = 'modifier.html'> Modifier un utilisateur</a></li>";
-        echo "<li><a href='suppression.php'>Supprimer un utilisateur</li>";
+        echo "<li><a href='suppression.php'>Supprimer un utilisateur</a></li>";
         echo "</ul>";
         echo "</div>";
 
@@ -61,7 +61,7 @@ if(isset($_SESSION['login'])) {
         echo "<h3> Gestion des emprunts</h3>";
         echo "<p> Dans cet onglet vous pouvez afficher , ajouter , modifier ou supprimer des emprunts</p>";
         echo "<ul>";
-        echo "<li> <a href=''>Enregistrement d'un emprunt</a></li>";
+        echo "<li> <a href='ajouterEmprunt.html'>Enregistrer un emprunt</a></li>";
         echo "<li><a href = ''> Modifier un emprunt</a></li>";
         echo "<li><a href=''>Supprimer un emprunt</li>";
         echo "<li> <a href=''>Liste des emprunts</a>";
