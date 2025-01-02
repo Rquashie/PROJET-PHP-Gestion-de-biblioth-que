@@ -20,7 +20,7 @@ if(isset($_SESSION["login"])) {
                                      AND ref_inscrit = ?");
         $sqlVerif->execute([$date, $delais,$ref_exemplaire, $ref_inscrit]);
         if ($sqlVerif->rowCount() == 1) {
-            echo "<p>Enregistrement effectué avec succes</p>";
+            echo "<p>Enregistrement effectué avec succes ✅</p>";
             echo "<a href = 'ajouterEmprunt.html' >Retour vers l'onglet </a> ";
         } else {
             echo "<p>Une erreur s'est produite lors de l'ajout. Veuillez réessayer</p>";

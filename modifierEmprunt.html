@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enregistrer un emprunt</title>
+</head>
+<body>
+<h2> Modifier un emprunt</h2>
+<form  action="modifierEmprunt.php" method="POST">
+    <table>
+        <tr>
+            <td><label for name = "id_emprunt">Numéro d'emprunt (Obligatoire) </label></td>
+            <td> <input type ="number" name ="id_emprunt" required></td>
+        </tr>
+        <tr>
+            <td><label for name = "date_emprunt">Date de l'emprunt </label></td>
+            <td> <input type ="date" name ="date_empruntBIS" ></td>
+        </tr>
+        <tr>
+            <td><label for name ="delai">Délai (nombre de jours)</label></td>
+            <td> <input type ="number" name ="delaiBIS" ></td>
+        </tr>
+        <tr>
+            <td> <label for name="ref_exemplaire">Numéro d'exemplaire</label></td>
+            <td> <input type = "text" name = "ref_exemplaireBIS" /> </td>
+        </tr>
+        <tr>
+            <td> <label for name="ref_inscit">Numéro de l'inscrit</label></td>
+            <td> <input type = "text" name = "ref_inscritBIS" > </td>
+        </tr>
+
+        <tr>
+            <td> <input type = "submit" value = "Valider"></td>
+            <td> <input type = "reset" value = "Annuler"></td>
+        </tr>
+    </table>
+</form>
+
+
+<div class="bas-page">
+    <a href = "pageAdmin.php">Retour</a>
+</div>
+
+</body>
+</html>

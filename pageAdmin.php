@@ -62,9 +62,9 @@ if(isset($_SESSION['login'])) {
         echo "<p> Dans cet onglet vous pouvez afficher , ajouter , modifier ou supprimer des emprunts</p>";
         echo "<ul>";
         echo "<li> <a href='ajouterEmprunt.html'>Enregistrer un emprunt</a></li>";
-        echo "<li><a href = ''> Modifier un emprunt</a></li>";
-        echo "<li><a href=''>Supprimer un emprunt</li>";
-        echo "<li> <a href=''>Liste des emprunts</a>";
+        echo "<li><a href = 'modifierEmprunt.html'> Modifier un emprunt</a></li>";
+        echo "<li><a href='supprimerEmprunt.php'>Supprimer un emprunt</li>";
+        echo "<li> <a href='listeEmprunt.php'>Liste des emprunts</a>";
         echo "</ul>";
         echo "</div>" ;
 
