@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b559b7c-19e7-4380-acdd-8a3cb2c16211" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ajoutAuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajoutAuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/modifier.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modifier.php" beforeDir="false" afterPath="$PROJECT_DIR$/modifierInscrit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modifierAuteur.html" beforeDir="false" afterPath="$PROJECT_DIR$/modifierAuteur.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pageAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/pageAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formConnexion.html" beforeDir="false" afterPath="$PROJECT_DIR$/formConnexion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formInscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/formInscription.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listeAuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/listeAuteur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listeEmprunt.php" beforeDir="false" afterPath="$PROJECT_DIR$/listeEmprunt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listeLivre.php" beforeDir="false" afterPath="$PROJECT_DIR$/listeLivre.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pageUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/pageUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suppression.php" beforeDir="false" afterPath="$PROJECT_DIR$/suppression.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supprimerAuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/supprimerAuteur.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,28 +41,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/wamp64/www/QUASHIE/PROJET-2-PHP",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/QUASHIE/PROJET-2-PHP&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,7 +85,12 @@
       <workItem from="1734377480186" duration="1518000" />
       <workItem from="1734379042206" duration="6255000" />
       <workItem from="1734697678446" duration="20929000" />
-      <workItem from="1735295947993" duration="9968000" />
+      <workItem from="1735295947993" duration="59122000" />
+      <workItem from="1735818991507" duration="9152000" />
+      <workItem from="1735898016734" duration="327000" />
+      <workItem from="1735898448586" duration="306000" />
+      <workItem from="1735901027855" duration="8560000" />
+      <workItem from="1736361142068" duration="10194000" />
     </task>
     <servers />
   </component>

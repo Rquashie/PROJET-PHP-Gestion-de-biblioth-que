@@ -5,6 +5,18 @@ class Livres{
     public function triLivres($colonne, $ordre)
     {
         global $bdd;
+        // éviter les injections SQL
+        $colonnes_valides = ['id_livre', 'titre','annee'];
+        $ordres_valides = ['ASC', 'DESC'];
+
+        // Vérification que la colonne et l'ordre sont dans les listes
+        if (!in_array($colonne, $colonnes_valides)) {
+            $colonne = 'titre'; // Si la colonne n'est pas valide, on en prend une par défaut
+        }
+        if (!in_array($ordre, $ordres_valides)) {
+            $ordre = 'ASC'; // Si l'ordre n'est pas valide, on prend 'ASC' par défaut
+        }
+
         $sqlLivreAuteur = $bdd->prepare("select titre as 'Titre du livre', annee as 'Année de parution',
             concat(a.nom,' ', a.prenom) as 'Auteur' , resume as 'Résumé'
             from ecrire e

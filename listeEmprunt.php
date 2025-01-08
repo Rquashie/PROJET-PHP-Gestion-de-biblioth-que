@@ -6,6 +6,18 @@ class Emprunts
     public function triEmprunts($colonne, $ordre)
     {
         global $bdd;
+        // éviter les injections SQL
+        $colonnes_valides = ['id_emprunt', 'date'];
+        $ordres_valides = ['ASC', 'DESC'];
+
+        // Vérification que la colonne et l'ordre sont dans les listes
+        if (!in_array($colonne, $colonnes_valides)) {
+            $colonne = 'nom'; // Si la colonne n'est pas valide, on en prend une par défaut
+        }
+        if (!in_array($ordre, $ordres_valides)) {
+            $ordre = 'ASC'; // Si l'ordre n'est pas valide, on prend 'ASC' par défaut
+        }
+
         $sqlEmprunt= $bdd->prepare("
           Select id_emprunt , date ,delais ,DATE_ADD(date,INTERVAL delais DAY) as 'Date de retour',
           ref_inscrit as 'Numéro d''inscrit', CONCAT(prenom,' ',nom) as 'nom' ,
@@ -63,8 +75,6 @@ if (isset($_SESSION["login"])) {
     echo "<select name='filtre-emprunt'>";
     echo "<option value='Trie-par-date-asc'>Date d'emprunt du + récent au - récent </option>";
     echo "<option value='Trie-par-date-desc'>Date d'emprunt du - récent au + récent</option>";
-    echo "<option value='Trie-par-numExemplaire-asc'>Tri par numero d'exemplaire croissant</option>";
-    echo "<option value='Trie-par-numExemplaire-desc'>Tri par numero d'exemplaire decroissant</option>";
     echo "<option value='Trie-par-inscrit-desc'>Tri par numéro d'inscrit croissant</option>";
     echo "<option value='Trie-par-inscrit-desc'>Tri par numéro d'inscrit decroissant</option>";
     echo "<option value='sans-filtre'>Afficher tout </option>";
@@ -97,12 +107,7 @@ if (isset($_SESSION["login"])) {
         if ($filtreEmprunt == "Trie-par-date-desc") {
             $emprunts->triEmprunts('date', 'ASC');
         }
-        if ($filtreEmprunt == "Trie-par-numExemplaire-asc") {
-            $emprunts->triEmprunts('ref_exemplaire', 'ASC');
-        }
-        if ($filtreEmprunt == "Trie-par-numExemplaire-desc") {
-            $emprunts->triEmprunts('ref_exemplaire', 'DESC');
-        }
+
         if ($filtreEmprunt == "Trie-par-inscrit-asc") {
             $emprunts->triEmprunts('ref_inscrit', 'ASC');
         }

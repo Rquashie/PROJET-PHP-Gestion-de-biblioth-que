@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class ='contenu'>
+    <div class ='haut-page'>
+        <h1>Mediathèque</h1>
+        <div class='recherche'>
+            <form method='POST' action='listeLivre.php'>
+                <input type='search' name='recherche' placeholder='Recherche un livre...' />
+                <input type='image' src='recherche.png' width = '20px' alt='Rechercher' />
+            </form>
+            <a href = 'formRechercheAvancee.html'>+ Rechercher avancée </a>
+        </div>
+    </div>
+
+
+    <h2> Recherche avancée </h2>
+    <div class="recherche-avancee">
+
+
+<form  action="ajouterLivre.php" method="POST">
+    <table>
+        <tr>
+            <td><label for name = "titre">Titre </label></td>
+            <td> <input type ="text" name ="titre"></td>
+        </tr>
+        <tr>
+            <td><label for name ="auteur">Auteur</label></td>
+            <td> <input type ="text" name ="auteur"></td>
+        </tr>
+        <tr>
+            <td> <label for name="annee">Année de parution</label></td>
+            <td> <input  type = "text" name ='annee_livre' > </td>
+        </tr>
+        <tr>
+            <td> <label for name="date_livre">Date de publication</label></td>
+            <td> <input  type = "date" name ='date_livre' > </td>
+        </tr>
+
+        <tr>
+            <td> <input type = "submit" value = "Valider"></td>
+            <td> <input type = "reset" value = "Annuler"></td>
+        </tr>
+
+    </table>
+</form>
+</div>
+</div>
+<tr>
+    <td> <a href="pageUser.php">Retour  </a></td>
+</tr>
+</body>
+</html>
+<style>
+    body {
+        width: 100%;
+        background-color: lightgray;
+    }
+
+    .contenu .haut-page {
+        padding: 10px;
+        background-color: cornflowerblue;
+        height: 60%;
+    }
+
+    .contenu .haut-page h1 {
+        justify-content: center;
+        display: flex;
+        color: white;
+    }
+
+    .contenu .haut-page .espace-user {
+        justify-content: flex-end;
+        font-family: Calibri;
+        font-size: small;
+        right: 5px;
+        top: 10px;
+        position: absolute;
+    }
+
+    .contenu .recherche {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    }
+
+    .contenu .recherche form {
+        display: flex;
+        width: 40%;
+        border: 2px solid #ccc;
+        border-radius: 25px;
+        overflow: hidden;
+        background-color: #f9f9f9;
+    }
+
+    .contenu .recherche form input[type='search'] {
+        font-size: 12px;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        flex: 1;
+    }
+
+    .contenu .recherche form input[type='image'] {
+        border: none;
+        padding: 30px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+
+
+    /* Centrer le lien 'Rechercher avancée' */
+    .contenu .recherche a {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    /* Centrer la section Recherche avancée */
+    .contenu .recherche-avancee {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Centrer le formulaire dans la section Recherche avancée */
+    .contenu .recherche-avancee form {
+        width: 50%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: beige;
+    }
+    .contenu .recherche-avancee form input {
+        margin-top: 50px;
+    }
+    .contenu .recherche-avancee form input[type="submit"]{
+        color: cornflowerblue;
+    }
+    .contenu .recherche-avancee form input[type="reset"]{
+        color: cornflowerblue;
+    }
+    h2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: cornflowerblue;
+    }
+</style>

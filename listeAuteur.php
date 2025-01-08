@@ -5,6 +5,18 @@ session_start();
         public function triAuteurs($colonne, $ordre)
         {
             global $bdd;
+            // éviter les injections SQL
+            $colonnes_valides = ['id_auteur', 'nom', 'prenom','date_naissance'];
+            $ordres_valides = ['ASC', 'DESC'];
+
+            // Vérification que la colonne et l'ordre sont dans les listes
+            if (!in_array($colonne, $colonnes_valides)) {
+                $colonne = 'nom'; // Si la colonne n'est pas valide, on en prend une par défaut
+            }
+            if (!in_array($ordre, $ordres_valides)) {
+                $ordre = 'ASC'; // Si l'ordre n'est pas valide, on prend 'ASC' par défaut
+            }
+
             $sql = $bdd->prepare("SELECT * FROM auteur order by $colonne $ordre");
             $sql->execute();
             while ($ligne = $sql->fetch()) {
